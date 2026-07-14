@@ -13,12 +13,14 @@ interface ExperienceProps {
 
 export function Experience({ parallax }: ExperienceProps) {
   return (
-    <Suspense fallback={null}>
+    <>
       <CameraRig parallax={parallax} />
       <StudioLighting />
       <ExhibitionRoom />
-      <ClawMachine />
+      <Suspense fallback={null}>
+        <ClawMachine />
+      </Suspense>
       <fog attach="fog" args={["#f4efe4", 6, 16]} />
-    </Suspense>
+    </>
   );
 }
