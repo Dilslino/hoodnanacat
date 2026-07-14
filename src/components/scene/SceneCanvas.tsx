@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { AdaptiveDpr, PerformanceMonitor } from "@react-three/drei";
 import { Experience } from "./Experience";
@@ -27,9 +27,7 @@ export function SceneCanvas() {
       <color attach="background" args={["#F8F5EF"]} />
       <PerformanceMonitor onDecline={() => setDprCeiling(1)} onIncline={() => setDprCeiling(1.25)} />
       <AdaptiveDpr pixelated={false} />
-      <Suspense fallback={null}>
-        <Experience parallax={parallax} />
-      </Suspense>
+      <Experience parallax={parallax} />
     </Canvas>
   );
 }
