@@ -59,7 +59,7 @@ export default function Home() {
         </div>
 
         <p className="mt-8 max-w-[620px] text-pretty text-sm leading-7 text-[#f7f0df]/64 sm:text-base">
-          An abstract HoodNanaCat artifact is forming. The claw machine is still in the back room — polished, tuned, and almost ready.
+          The machine is under the hood. No tickets yet — just signal, fur, and banana static.
         </p>
       </section>
     </main>

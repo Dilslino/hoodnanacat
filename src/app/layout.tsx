@@ -17,7 +17,11 @@ const plexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "HoodNanaCat — The Hood Machine",
-  description: "A luxury interactive claw machine experience.",
+  description: "The machine is under the hood.",
+  icons: {
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
+  },
 };
 
 export const viewport: Viewport = {
@@ -25,7 +29,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#f8f5ef",
+  themeColor: "#080807",
 };
 
 export default function RootLayout({
