@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { RigidBody, type RapierRigidBody } from "@react-three/rapier";
 import { Group, MeshPhysicalMaterial } from "three";
-import { registerPlush, unregisterPlush } from "@/lib/plushRegistry";
 import { randomRange } from "@/lib/mathUtils";
 
 export type PlushBehavior = "idle" | "sleeping" | "stretching" | "lookAround" | "rolling";
@@ -28,7 +26,6 @@ const HOOD_COLORS = ["#1b1b1b", "#3a3a3a", "#1b1b1b"];
  * never look like they're animating in sync.
  */
 export function HoodNanaCat({ id, position, rotationY, variant }: HoodNanaCatProps) {
-  const rigidBodyRef = useRef<RapierRigidBody>(null);
   const groupRef = useRef<Group>(null);
   const leftEarRef = useRef<Group>(null);
   const rightEarRef = useRef<Group>(null);
@@ -54,10 +51,6 @@ export function HoodNanaCat({ id, position, rotationY, variant }: HoodNanaCatPro
   const blinkTimerRef = useRef(0);
   const earTwitchTimerRef = useRef(0);
   const lookTimerRef = useRef(0);
-
-  useEffect(() => {
-    return () => unregisterPlush(id);
-  }, [id]);
 
   const bodyColor = BODY_COLORS[variant % BODY_COLORS.length];
   const hoodColor = HOOD_COLORS[variant % HOOD_COLORS.length];
@@ -123,22 +116,7 @@ export function HoodNanaCat({ id, position, rotationY, variant }: HoodNanaCatPro
   });
 
   return (
-    <RigidBody
-      ref={(api) => {
-        rigidBodyRef.current = api;
-        if (api) {
-          registerPlush({ id, api, grabbed: false });
-        }
-      }}
-      position={position}
-      rotation={[0, rotationY, 0]}
-      colliders="cuboid"
-      restitution={0.15}
-      friction={0.9}
-      linearDamping={0.4}
-      angularDamping={0.6}
-    >
-      <group ref={groupRef}>
+    <group ref={groupRef} position={position} rotation={[0, rotationY, 0]}>
         {/* Body */}
         <mesh castShadow receiveShadow position={[0, 0.13, 0]}>
           <capsuleGeometry args={[0.11, 0.1, 6, 12]} />
@@ -206,7 +184,6 @@ export function HoodNanaCat({ id, position, rotationY, variant }: HoodNanaCatPro
           <capsuleGeometry args={[0.016, 0.08, 4, 8]} />
           <meshStandardMaterial color="#f3d35b" roughness={0.7} />
         </mesh>
-      </group>
-    </RigidBody>
+    </group>
   );
 }
