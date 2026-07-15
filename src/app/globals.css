@@ -33,6 +33,7 @@ body {
   overflow: hidden;
   width: 100vw;
   min-height: 100vh;
+  min-height: 100svh;
 }
 
 .font-mono-ui { font-family: var(--font-plex-mono), ui-monospace, monospace; }
@@ -75,28 +76,28 @@ canvas { touch-action: none; outline: none; display: block; }
 }
 
 .orb-a {
-  width: 42vw;
-  height: 42vw;
-  left: -12vw;
-  top: -14vw;
+  width: clamp(280px, 42vw, 720px);
+  height: clamp(280px, 42vw, 720px);
+  left: max(-160px, -12vw);
+  top: max(-180px, -14vw);
   background: radial-gradient(circle, rgba(243,211,91,.85), rgba(214,123,61,.18) 46%, transparent 70%);
   animation: driftA 13s ease-in-out infinite alternate;
 }
 
 .orb-b {
-  width: 46vw;
-  height: 46vw;
-  right: -18vw;
-  bottom: -20vw;
+  width: clamp(300px, 46vw, 760px);
+  height: clamp(300px, 46vw, 760px);
+  right: max(-210px, -18vw);
+  bottom: max(-230px, -20vw);
   background: radial-gradient(circle, rgba(125,163,109,.8), rgba(64,82,57,.2) 52%, transparent 72%);
   animation: driftB 15s ease-in-out infinite alternate;
 }
 
 .orb-c {
-  width: 26vw;
-  height: 26vw;
-  right: 16vw;
-  top: 11vh;
+  width: clamp(180px, 26vw, 430px);
+  height: clamp(180px, 26vw, 430px);
+  right: clamp(20px, 16vw, 260px);
+  top: 11svh;
   background: radial-gradient(circle, rgba(247,240,223,.45), rgba(231,199,112,.18) 54%, transparent 74%);
   animation: driftC 11s ease-in-out infinite alternate;
 }
@@ -118,14 +119,14 @@ canvas { touch-action: none; outline: none; display: block; }
 }
 
 .ring-one {
-  width: min(78vw, 820px);
-  height: min(78vw, 820px);
+  width: clamp(360px, 78vw, 820px);
+  height: clamp(360px, 78vw, 820px);
   animation: spinSlow 26s linear infinite;
 }
 
 .ring-two {
-  width: min(58vw, 620px);
-  height: min(58vw, 620px);
+  width: clamp(270px, 58vw, 620px);
+  height: clamp(270px, 58vw, 620px);
   border-color: rgba(231,199,112,.22);
   animation: spinSlow 20s linear infinite reverse;
 }
@@ -148,26 +149,26 @@ canvas { touch-action: none; outline: none; display: block; }
 }
 
 .image-orbit-a {
-  width: clamp(170px, 22vw, 310px);
-  height: clamp(170px, 22vw, 310px);
-  left: 8vw;
-  top: 14vh;
+  width: clamp(132px, 22vw, 310px);
+  height: clamp(132px, 22vw, 310px);
+  left: clamp(-34px, 8vw, 150px);
+  top: clamp(78px, 14svh, 150px);
   animation: floatA 8s ease-in-out infinite alternate;
 }
 
 .image-orbit-b {
-  width: clamp(120px, 16vw, 220px);
-  height: clamp(120px, 16vw, 220px);
-  right: 10vw;
-  top: 22vh;
+  width: clamp(94px, 16vw, 220px);
+  height: clamp(94px, 16vw, 220px);
+  right: clamp(-28px, 10vw, 170px);
+  top: clamp(120px, 22svh, 240px);
   animation: floatB 9s ease-in-out infinite alternate;
 }
 
 .image-orbit-c {
-  width: clamp(92px, 11vw, 160px);
-  height: clamp(92px, 11vw, 160px);
-  left: 58vw;
-  bottom: 14vh;
+  width: clamp(72px, 11vw, 160px);
+  height: clamp(72px, 11vw, 160px);
+  left: clamp(58vw, 60vw, 70vw);
+  bottom: clamp(80px, 14svh, 170px);
   opacity: .62;
   animation: floatC 7s ease-in-out infinite alternate;
 }
@@ -180,8 +181,9 @@ canvas { touch-action: none; outline: none; display: block; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: min(86vw, 620px);
-  padding: .02em .32em .08em;
+  width: min(86vw, 620px);
+  max-width: 620px;
+  padding: .02em .26em .08em;
   border-radius: 999px;
   background: #f3d35b;
   box-shadow: 0 0 0 1px rgba(255,255,255,.24), 0 26px 80px rgba(243,211,91,.24);
@@ -199,10 +201,27 @@ canvas { touch-action: none; outline: none; display: block; }
 @keyframes pulseSoon { 50% { transform: rotate(1deg) scale(1.035); } }
 
 @media (max-width: 640px) {
-  .image-orbit-a { left: -8vw; top: 12vh; }
-  .image-orbit-b { right: -10vw; top: 18vh; }
-  .image-orbit-c { left: 62vw; bottom: 10vh; }
-  .soon-badge { min-width: min(88vw, 420px); }
+  .coming-soon-page { min-height: 100svh; }
+  .image-orbit { opacity: .56; }
+  .image-orbit-a { left: -38px; top: 11svh; }
+  .image-orbit-b { right: -34px; top: 17svh; }
+  .image-orbit-c { left: auto; right: 16vw; bottom: 8svh; }
+  .soon-badge { width: min(88vw, 420px); }
+  .ring-one { width: 118vw; height: 118vw; }
+  .ring-two { width: 82vw; height: 82vw; }
+}
+
+@media (max-width: 380px) {
+  .image-orbit-a,
+  .image-orbit-b { opacity: .42; }
+  .image-orbit-c { display: none; }
+  .soon-badge { width: 92vw; }
+}
+
+@media (min-width: 1280px) {
+  .image-orbit-a { left: calc(50% - 520px); }
+  .image-orbit-b { right: calc(50% - 560px); }
+  .image-orbit-c { left: calc(50% + 240px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
