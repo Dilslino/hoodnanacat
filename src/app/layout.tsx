@@ -19,7 +19,11 @@ export const metadata: Metadata = {
   title: "HoodNanaCat — The Hood Machine",
   description: "The machine is under the hood.",
   icons: {
-    icon: "/icon.jpg",
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon.jpg", type: "image/jpeg" },
+    ],
+    shortcut: "/favicon.ico",
     apple: "/icon.jpg",
   },
 };
