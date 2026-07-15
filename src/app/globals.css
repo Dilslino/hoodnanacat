@@ -175,6 +175,9 @@ canvas { touch-action: none; outline: none; display: block; }
 
 .hero-title {
   text-shadow: 0 2px 0 rgba(231,199,112,.22), 0 26px 80px rgba(0,0,0,.55);
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
 }
 
 .soon-badge {
@@ -206,9 +209,10 @@ canvas { touch-action: none; outline: none; display: block; }
   .image-orbit-a { left: -38px; top: 11svh; }
   .image-orbit-b { right: -34px; top: 17svh; }
   .image-orbit-c { left: auto; right: 16vw; bottom: 8svh; }
-  .soon-badge { width: min(88vw, 420px); }
+  .soon-badge { width: min(82vw, 420px); padding-inline: .12em; }
   .ring-one { width: 118vw; height: 118vw; }
   .ring-two { width: 82vw; height: 82vw; }
+  .hero-title { letter-spacing: -0.025em; }
 }
 
 @media (max-width: 380px) {
@@ -216,12 +220,22 @@ canvas { touch-action: none; outline: none; display: block; }
   .image-orbit-b { opacity: .42; }
   .image-orbit-c { display: none; }
   .soon-badge { width: 92vw; }
+  .hero-title { font-size: clamp(2.05rem, 11.5vw, 4rem); }
+  .coming-soon-page .hero-title + div { font-size: clamp(1.5rem, 7.6vw, 3.2rem); }
 }
 
 @media (min-width: 1280px) {
   .image-orbit-a { left: calc(50% - 520px); }
   .image-orbit-b { right: calc(50% - 560px); }
   .image-orbit-c { left: calc(50% + 240px); }
+}
+
+@media (max-height: 720px) and (orientation: landscape) {
+  .hero-title { font-size: clamp(2.4rem, 8.5vw, 5.6rem); }
+  .coming-soon-page .hero-title + div { font-size: clamp(1.7rem, 5.6vw, 3.8rem); }
+  .soon-badge { margin-top: 1.25rem; font-size: clamp(1.8rem, 5.4vw, 3.2rem); }
+  .image-orbit-a, .image-orbit-b, .image-orbit-c { opacity: .35; }
+  .ring-one, .ring-two { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

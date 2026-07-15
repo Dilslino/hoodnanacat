@@ -8,7 +8,7 @@ export default function Home() {
       <div className="orb orb-b" />
       <div className="orb orb-c" />
 
-      <section className="relative z-10 flex min-h-svh flex-col items-center justify-center px-4 py-[max(2rem,env(safe-area-inset-top))] text-center sm:min-h-dvh sm:px-8 sm:py-10">
+      <section className="relative z-10 flex min-h-svh flex-col items-center justify-center px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-[max(2rem,env(safe-area-inset-top))] text-center sm:min-h-dvh sm:px-8 sm:py-10">
         <div className="art-stage" aria-hidden="true">
           <div className="art-ring ring-one" />
           <div className="art-ring ring-two" />
@@ -44,21 +44,21 @@ export default function Home() {
           </div>
         </div>
 
-        <p className="mb-4 max-w-[92vw] font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f0df]/58 sm:mb-6 sm:text-[11px] sm:tracking-[0.42em]">
+        <p className="mb-3 w-full max-w-[92vw] font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f0df]/58 sm:mb-6 sm:text-[11px] sm:tracking-[0.42em]">
           Claw machine loading soon
         </p>
-        <h1 className="hero-title max-w-[min(1150px,94vw)] text-balance font-sans text-[clamp(3.05rem,16vw,10.5rem)] font-black uppercase leading-[0.79] tracking-[-0.045em] sm:leading-[0.76] sm:tracking-[-0.055em]">
+        <h1 className="hero-title w-full max-w-[min(1150px,92vw)] text-balance font-sans text-[clamp(2.4rem,12.4vw,10.5rem)] font-black uppercase leading-[0.84] tracking-[-0.04em] sm:leading-[0.76] sm:tracking-[-0.055em]">
           HoodNanaCat
         </h1>
-        <div className="mt-3 max-w-[94vw] text-balance font-serif text-[clamp(2.15rem,10vw,7.2rem)] italic leading-[0.92] tracking-[-0.035em] text-[#e7c770] sm:mt-1 sm:tracking-[-0.045em]">
+        <div className="mt-2 w-full max-w-[92vw] text-balance font-serif text-[clamp(1.65rem,8.4vw,7.2rem)] italic leading-[0.96] tracking-[-0.03em] text-[#e7c770] sm:mt-1 sm:tracking-[-0.045em]">
           The Hood Machine
         </div>
 
-        <div className="soon-badge mt-8 font-mono-ui text-[clamp(2.2rem,13vw,6rem)] font-semibold uppercase tracking-[-0.075em] text-[#080807] sm:mt-12 sm:tracking-[-0.08em]">
+        <div className="soon-badge mt-7 font-mono-ui text-[clamp(1.95rem,11vw,6rem)] font-semibold uppercase tracking-[-0.07em] text-[#080807] sm:mt-12 sm:tracking-[-0.08em]">
           SOON
         </div>
 
-        <p className="mt-7 max-w-[min(620px,88vw)] text-pretty text-sm leading-6 text-[#f7f0df]/66 sm:mt-8 sm:text-base sm:leading-7">
+        <p className="mt-6 w-full max-w-[min(620px,86vw)] text-pretty text-sm leading-6 text-[#f7f0df]/66 sm:mt-8 sm:text-base sm:leading-7">
           The machine is under the hood. No tickets yet — just signal, fur, and banana static.
         </p>
       </section>
