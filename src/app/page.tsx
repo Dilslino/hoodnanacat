@@ -47,14 +47,14 @@ export default function Home() {
         <p className="mb-3 w-full max-w-[92vw] font-mono-ui text-[10px] uppercase tracking-[0.32em] text-[#f7f0df]/58 sm:mb-6 sm:text-[11px] sm:tracking-[0.42em]">
           Claw machine loading soon
         </p>
-        <h1 className="hero-title w-full max-w-[min(1150px,92vw)] text-balance font-sans text-[clamp(2.4rem,12.4vw,10.5rem)] font-black uppercase leading-[0.84] tracking-[-0.04em] sm:leading-[0.76] sm:tracking-[-0.055em]">
+        <h1 className="hero-title w-full max-w-[min(1150px,92vw)] whitespace-nowrap text-center font-sans text-[clamp(1.85rem,9.2vw,10.5rem)] font-black uppercase leading-[0.84] tracking-[-0.04em] sm:leading-[0.76] sm:tracking-[-0.055em]">
           HoodNanaCat
         </h1>
-        <div className="mt-2 w-full max-w-[92vw] text-balance font-serif text-[clamp(1.65rem,8.4vw,7.2rem)] italic leading-[0.96] tracking-[-0.03em] text-[#e7c770] sm:mt-1 sm:tracking-[-0.045em]">
+        <div className="mt-2 w-full max-w-[92vw] text-center font-serif text-[clamp(1.45rem,7.6vw,7.2rem)] italic leading-[0.96] tracking-[-0.03em] text-[#e7c770] sm:mt-1 sm:tracking-[-0.045em]">
           The Hood Machine
         </div>
 
-        <div className="soon-badge mt-7 font-mono-ui text-[clamp(1.95rem,11vw,6rem)] font-semibold uppercase tracking-[-0.07em] text-[#080807] sm:mt-12 sm:tracking-[-0.08em]">
+        <div className="soon-badge mt-7 font-mono-ui text-[clamp(1.85rem,10.5vw,6rem)] font-semibold uppercase tracking-[-0.06em] text-[#080807] sm:mt-12 sm:tracking-[-0.08em]">
           SOON
         </div>
 
